@@ -1,0 +1,27 @@
+title: Strix Cloud Metadata SSRF Probe
+id: 7f4dd7d4-5b7c-4ae0-8d50-8d1d3a7f3006
+status: experimental
+description: Detects URI indicators targeting cloud instance metadata and link-local administration services.
+author: Strix Project
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+    - attack.credential-access
+    - attack.t1552.005
+    - attack.initial-access
+    - attack.t1190
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - '169.254.169.254'
+        - 'metadata.google.internal'
+        - 'latest/meta-data'
+        - 'latest/user-data'
+        - 'instance/identity'
+        - '100.100.100.200'
+        - 'metadata.azure.com'
+    condition: keywords
+falsepositives:
+    - Cloud inventory and authorized security testing
+level: high

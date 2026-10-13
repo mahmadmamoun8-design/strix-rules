@@ -97,6 +97,60 @@
       "source_url": "https://github.com/SigmaHQ/sigma/blob/42478221b1a062411b8185732c82caa439271122/rules/web/webserver_generic/web_xss_in_access_logs.yml",
       "sha256": "aecf13dfffc0d341a27fa2bb93f15c54512c7ee78107195526ff3f2bece27144",
       "authors": "Saw Win Naung, Nasreddine Bencherchali"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_command_injection_uri.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "10891d691600c95c2b5c5df73d9a2e5ef99fcbb5266b92d344415c8ca946db86",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_encoded_path_traversal.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "0c59b1412a8b93f1e366ffb406a722fcc77e006013bc0c9de4e3bfdc9e3db00d",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_exposed_debug_endpoint.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "299b220dde12322fdebedaa0450a5cfb4c21a247ff280f9e8dd67aec5304587c",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_sensitive_file_probe.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "e55172170117bfba1131fb4b89c4185a3a9109a4d237aec928e2ae400bcb1df2",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_ssrf_metadata_probe.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "fb9b2db814f898e7aebd3f2f039e0b36c629bdb8fa9ae754c1c1794514102c2b",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
+    },
+    {
+      "path": "rules/web/webserver_generic/strix_webshell_upload.yml",
+      "source_path": null,
+      "source_url": null,
+      "sha256": "cae3dfbafaa4639de1502f0e5b2031a73794de153b6357647b9e36cfb4ee7f21",
+      "authors": "Strix Project",
+      "provenance": "Strix-owned",
+      "license": "See LICENSE for packaging and project-owned rule terms"
     }
   ]
 }

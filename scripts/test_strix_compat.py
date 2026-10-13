@@ -109,6 +109,12 @@ def main() -> None:
                     '127.0.0.1 - - [13/Oct/2026:14:00:01 +0000] "GET /?q=UNION%20SELECT HTTP/1.1" 200 123 "-" "Mozilla/5.0"',
                     '127.0.0.1 - - [13/Oct/2026:14:00:02 +0000] "GET / HTTP/1.1" 200 123 "-" "Nmap Scripting Engine"',
                     '127.0.0.1 - - [13/Oct/2026:14:00:03 +0000] "GET /owa/auth?cmd=whoami HTTP/1.1" 200 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:04 +0000] "GET /.env HTTP/1.1" 404 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:05 +0000] "GET /download?file=%2e%2e%2fetc%2fpasswd HTTP/1.1" 400 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:06 +0000] "GET /run?cmd=;id HTTP/1.1" 400 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:07 +0000] "POST /upload.php HTTP/1.1" 200 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:08 +0000] "GET /actuator/env HTTP/1.1" 401 123 "-" "Mozilla/5.0"',
+                    '127.0.0.1 - - [13/Oct/2026:14:00:09 +0000] "GET /proxy?url=http%3A%2F%2F169.254.169.254%2Flatest%2Fmeta-data%2F HTTP/1.1" 400 123 "-" "Mozilla/5.0"',
                 ]
             )
             + "\n",
@@ -137,11 +143,18 @@ def main() -> None:
             "Sigma: SQL Injection Strings In URI",
             "Sigma: Suspicious User-Agents Related To Recon Tools",
             "Sigma: Windows Webshell Strings",
+            "Sigma: Strix Sensitive File and Configuration Probe",
+            "Sigma: Strix Encoded Path Traversal Attempt",
+            "Sigma: Strix Command Injection Indicators in URI",
+            "Sigma: Strix Webshell Upload Attempt",
+            "Sigma: Strix Exposed Debug or Management Endpoint Probe",
+            "Sigma: Strix Cloud Metadata SSRF Probe",
         }
         logs = result.stderr + "\n" + result.stdout
         plain_logs = re.sub(r"\x1b\[[0-?]*[ -/]*[@-~]", "", logs)
+        expected_rule_count = len(manifest["rules"])
         load_summary = re.search(
-            r"(?m)Sigma rules loaded[^\r\n]*\bloaded=13\b[^\r\n]*\brejected=0\b",
+            rf"(?m)Sigma rules loaded[^\r\n]*\bloaded={expected_rule_count}\b[^\r\n]*\brejected=0\b",
             plain_logs,
         )
         if not load_summary:
@@ -166,8 +179,8 @@ def main() -> None:
         if unattributed:
             raise SystemExit("Author attribution missing from: " + ", ".join(sorted(unattributed)))
 
-    print("PASS: all 13 SigmaHQ rules loaded with zero rejected in isolated Strix Core CLI scan.")
-    print("PASS: 4 representative SigmaHQ rules matched; author attribution was present in each alert.")
+    print(f"PASS: all {len(manifest['rules'])} manifest rules loaded with zero rejected in isolated Strix Core CLI scan.")
+    print("PASS: 10 representative rules matched; author attribution was present in each alert.")
     print("PASS: test data, config, database, and secrets were temporary and removed.")
 
 

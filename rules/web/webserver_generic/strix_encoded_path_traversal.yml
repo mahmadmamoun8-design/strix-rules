@@ -1,0 +1,27 @@
+title: Strix Encoded Path Traversal Attempt
+id: 7f4dd7d4-5b7c-4ae0-8d50-8d1d3a7f3002
+status: experimental
+description: Detects common URL-encoded and double-encoded path traversal sequences in web requests.
+author: Strix Project
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+    - attack.initial-access
+    - attack.t1190
+    - attack.discovery
+    - attack.t1083
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - '%2e%2e%2f'
+        - '%2e%2e%5c'
+        - '%252e%252e%252f'
+        - '..%2f'
+        - '..%5c'
+        - '%c0%ae%c0%ae'
+        - '%e0%80%ae%e0%80%ae'
+    condition: keywords
+falsepositives:
+    - Authorized penetration testing
+level: high

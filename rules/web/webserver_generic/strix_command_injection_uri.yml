@@ -1,0 +1,32 @@
+title: Strix Command Injection Indicators in URI
+id: 7f4dd7d4-5b7c-4ae0-8d50-8d1d3a7f3003
+status: experimental
+description: Detects shell command injection indicators commonly carried in web query strings or paths.
+author: Strix Project
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+    - attack.execution
+    - attack.t1059
+    - attack.t1059.004
+    - attack.initial-access
+    - attack.t1190
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - ';id'
+        - ';whoami'
+        - '|id'
+        - '|whoami'
+        - '$(id'
+        - '`id`'
+        - 'cmd='
+        - 'exec='
+        - 'command='
+        - 'wget%20'
+        - 'curl%20'
+    condition: keywords
+falsepositives:
+    - Documentation and intentionally simulated test requests
+level: high

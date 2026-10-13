@@ -1,0 +1,28 @@
+title: Strix Sensitive File and Configuration Probe
+id: 7f4dd7d4-5b7c-4ae0-8d50-8d1d3a7f3001
+status: experimental
+description: Detects web requests probing exposed operating-system or application configuration files.
+author: Strix Project
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+    - attack.credential-access
+    - attack.t1552.001
+    - attack.discovery
+    - attack.t1083
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - '/etc/passwd'
+        - '/etc/shadow'
+        - '/.env'
+        - '/.git/config'
+        - '/.git/HEAD'
+        - 'wp-config.php'
+        - '/server-status'
+        - '/phpinfo.php'
+    condition: keywords
+falsepositives:
+    - Authorized vulnerability scanners
+level: high

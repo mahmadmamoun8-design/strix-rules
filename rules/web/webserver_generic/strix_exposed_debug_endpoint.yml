@@ -1,0 +1,30 @@
+title: Strix Exposed Debug or Management Endpoint Probe
+id: 7f4dd7d4-5b7c-4ae0-8d50-8d1d3a7f3005
+status: experimental
+description: Detects requests for common debug, actuator, metrics, and management endpoints.
+author: Strix Project
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+    - attack.discovery
+    - attack.t1046
+    - attack.t1082
+    - attack.initial-access
+    - attack.t1190
+logsource:
+    category: webserver
+detection:
+    keywords:
+        - '/actuator/env'
+        - '/actuator/heapdump'
+        - '/actuator/mappings'
+        - '/debug/vars'
+        - '/debug/pprof'
+        - '/metrics'
+        - '/server-status'
+        - '/jmx-console'
+        - '/manage/actuator'
+    condition: keywords
+falsepositives:
+    - Authorized monitoring and health checks
+level: medium
