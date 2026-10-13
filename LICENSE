@@ -1,0 +1,17 @@
+# Mixed-license notice
+
+This repository contains third-party Sigma detection rules and Strix integration materials. The licenses are scoped by file group:
+
+- `rules/**/*.yml`: unmodified SigmaHQ rules, licensed under the Detection Rule License (DRL) 1.1. The complete license text is included in `LICENSE.Detection.Rules.md`.
+- `NOTICE.SigmaHQ`: the upstream SigmaHQ license notice, preserved from the pinned source repository.
+- `README.md`, `MANIFEST.json`, and `scripts/**`: MIT License, as stated below. This MIT grant does not change or replace the license on any Sigma rule.
+
+## MIT License
+
+Copyright (c) 2026 Strix contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of the documentation and integration materials listed above (the "Materials"), to deal in the Materials without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Materials, and to permit persons to whom the Materials are furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Materials.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
