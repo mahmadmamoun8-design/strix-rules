@@ -1,0 +1,5 @@
+Hayabusa Sigma rules vendored from Yamato-Security/hayabusa-rules at commit 137510326932eb881cc619c5041212905a98f683.
+Source: https://github.com/Yamato-Security/hayabusa-rules/tree/137510326932eb881cc619c5041212905a98f683
+License: Detection Rule License (DRL) 1.1; see LICENSE.Hayabusa.DRL.md.
+
+Vendored accepted rules: 3181. Rules rejected by the current Strix loader were not vendored.

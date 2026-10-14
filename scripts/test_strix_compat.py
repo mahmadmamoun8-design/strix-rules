@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Isolated compatibility test for the vendored SigmaHQ rule pack."""
+"""Isolated compatibility test for the vendored Strix Sigma rule pack."""
 from __future__ import annotations
 
 import hashlib
@@ -159,7 +159,7 @@ def main() -> None:
         )
         if not load_summary:
             raise SystemExit(
-                "Expected all 13 SigmaHQ rules to load with zero rejected.\n"
+                f"Expected all {expected_rule_count} manifest rules to load with zero rejected.\n"
                 f"regex result: {load_summary!r}\nraw logs: {logs!r}\n"
                 f"stderr:\n{result.stderr}"
             )
